@@ -250,6 +250,8 @@ namespace LSWebAPI.Controllers
 
             bool hasRegistered = user != null;
 
+            // Put sysadmin user creation here
+
             if (hasRegistered)
             {
                 Authentication.SignOut(DefaultAuthenticationTypes.ExternalCookie);
