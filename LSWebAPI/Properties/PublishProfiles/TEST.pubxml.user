@@ -58,7 +58,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>04/10/2014 09:29:48</publishTime>
     </File>
     <File Include="bin/LSWebAPI.dll">
-      <publishTime>04/10/2014 09:46:05</publishTime>
+      <publishTime>04/11/2014 19:35:16</publishTime>
     </File>
     <File Include="bin/Microsoft.AspNet.Identity.Core.dll">
       <publishTime>04/10/2014 09:29:50</publishTime>
