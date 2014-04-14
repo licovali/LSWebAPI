@@ -4,9 +4,15 @@ using System.Linq;
 using System.Net;
 using System.Net.Http;
 using System.Web.Http;
+using Microsoft.AspNet.Identity;
+using Microsoft.Owin.Security;
+using Microsoft.Owin.Security.Cookies;
+using Microsoft.Owin.Security.OAuth;
 using LSWebAPI.Models;
+
 namespace LSWebAPI.Controllers
 {
+    [Authorize]
     public class MenuController : ApiController
     {
         root[] menu = new root[]
@@ -25,8 +31,10 @@ namespace LSWebAPI.Controllers
             }
         };
 
-        public IEnumerable<root> Get(int id)
+        [HostAuthentication(DefaultAuthenticationTypes.ExternalBearer)]
+        public IEnumerable<root> Get()
         {
+            string _user = Request.GetOwinContext().Authentication.User.Identity.Name;
             return menu;
         }
     }
