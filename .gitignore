@@ -3,3 +3,6 @@ LSWebAPI/obj/
 LSWebAPI/bin/
 *.suo
 LSWebAPI.v12.suo
+LSWebAPI.v12.suo
+LSWebAPI/Web.config
+LSWebAPI/Properties/PublishProfiles/TEST.pubxml.user
