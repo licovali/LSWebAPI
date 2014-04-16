@@ -25,8 +25,8 @@ namespace LSWebAPI.Controllers
                 className = null, 
                 leaf = false, 
                 items = new items[] { 
-                    new items { id = "1", text = "Groups", iconCls = "", parent_id = "1",  className = "panel", leaf = true },
-                    new items { id = "2", text = "Users", iconCls = "", parent_id = "1",  className = "panel", leaf = true } 
+                    new items { id = "1", text = "<i class=\"fa fa-users\"></i> " + "Groups", iconCls = "", parent_id = "1",  className = "panel", leaf = true },
+                    new items { id = "2", text = "<i class=\"fa fa-user\"></i> " + "Users", iconCls = "", parent_id = "1",  className = "panel", leaf = true } 
                 } 
             }
         };
